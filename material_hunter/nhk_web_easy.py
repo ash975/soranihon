@@ -23,7 +23,7 @@ response = requests.request(method="GET", url=URL, headers=send_header)
 
 article_today_dir = ARTICLE_DIR + "/" + str(date.today())
 if not os.path.exists(article_today_dir):
-    os.mkdir(article_today_dir)
+    os.makedirs(article_today_dir)
 
 article_list = response.json()
 article_today = article_list[0].get(str(date.today()))
@@ -48,6 +48,7 @@ for article in article_today:
         article_content = str(soup.findAll(id="js-article-body")[0])
     except Exception as e:
         print("pull article content error", e)
+        sys.exit(0)
 
     try:
         article_file = open(article_today_dir + "/" + article_id + ".html", "w+", encoding='utf-8')
@@ -69,10 +70,6 @@ for article in article_today:
 
         # print("start ", article_title)
         article_file.writelines(article_title)
-        article_file.writelines("\n")
-        article_file.writelines("\n")
-
-        article_file.writelines("NHK")
         article_file.writelines("\n")
         article_file.writelines("\n")
 
