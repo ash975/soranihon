@@ -7,7 +7,7 @@ import requests
 
 
 # Setting
-ARTICLE_NAME_JAP = "1207"
+ARTICLE_NAME_JAP = "kyoukawasama"
 ARTICLE_NAME_WORLD = ""
 
 ARTICLE_NAME = "JAP"
@@ -31,10 +31,10 @@ elif ARTICLE_NAME == "WORLD":
 ORIGIN = "http://hukumusume.com/douwa/book"
 URL_WORLD = "http://hukumusume.com/douwa/book/world/" + ARTICLE_NAME + ".html"
 URL_JAP = "http://hukumusume.com/douwa/book/jap/" + ARTICLE_NAME + ".html"
-FILE = "../material/" + ARTICLE_NAME + "/"
 ARTICLE_DIR = "../material"
+article_today_dir = ARTICLE_DIR + "/" + str(date.today()) + "/" + ARTICLE_NAME
+FILE = article_today_dir + "/"
 
-article_today_dir = ARTICLE_DIR + "/" + str(date.today())
 if not os.path.exists(article_today_dir):
     os.makedirs(article_today_dir)
 

@@ -1,4 +1,3 @@
-import json
 import os
 import sys
 import time
@@ -9,7 +8,7 @@ import requests
 
 # URL = "https://www3.nhk.or.jp/news/easy/?utm_int=all_header_menu_easy"
 URL = "https://www3.nhk.or.jp/news/easy/news-list.json"
-ARTICLE_DIR = "../material/news"
+ARTICLE_DIR = "../material"
 URL_EASY = "https://www3.nhk.or.jp/news/easy"
 
 send_header = {
@@ -21,7 +20,7 @@ send_header = {
 
 response = requests.request(method="GET", url=URL, headers=send_header)
 
-article_today_dir = ARTICLE_DIR + "/" + str(date.today())
+article_today_dir = ARTICLE_DIR + "/" + str(date.today()) + "/news"
 if not os.path.exists(article_today_dir):
     os.makedirs(article_today_dir)
 
