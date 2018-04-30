@@ -5,10 +5,11 @@ from datetime import date
 from bs4 import BeautifulSoup
 import requests
 
+article_input = input("Please input article name : ")
 
 # Setting
-ARTICLE_NAME_JAP = "kyoukawasama"
-ARTICLE_NAME_WORLD = ""
+ARTICLE_NAME_JAP = article_input
+ARTICLE_NAME_WORLD = article_input
 
 ARTICLE_NAME = "JAP"
 URL = "JAP"
